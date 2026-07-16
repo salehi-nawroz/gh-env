@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  MONGODB_DB_NAME: ghademo
+  MONGODB_DB_NAME: gh-demo
 
 jobs:
   test:
@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Run server
-        run: npm start & npx wait-on http://76.34.150.103:$ {{ env.PORT }}
+        run: npm start & npx wait-on http://127.0.0.1:${{ env.PORT }}
 
       - name: Run tests
         run: npm test
