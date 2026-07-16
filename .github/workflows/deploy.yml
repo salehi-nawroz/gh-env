@@ -21,20 +21,20 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v4
-      - name: Output MongoDB DB Name
-        run: echo ${{ env.MONGODB_DB_NAME }}
+      # - name: Output MongoDB DB Name
+      #   run: echo ${{ env.MONGODB_DB_NAME }}
 
-  #     - name: Cache dependencies
-  #       uses: actions/cache@v4
-  #       with:
-  #         path: ~/.npm
-  #         key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
 
-  #     - name: Install dependencies
-  #       run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-  #     - name: Run server
-  #       run: npm start & npx wait-on http://127.0.0.1:${{ env.PORT }}
+      - name: Run server
+        run: npm start & npx wait-on http://127.0.0.1:${{ env.PORT }}
 
   #     - name: Run tests
   #       run: npm test
