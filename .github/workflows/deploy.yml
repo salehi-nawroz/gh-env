@@ -4,10 +4,9 @@ on:
     branches:
       - master
 env: |
-  MONGODB_DB_NAME:gha-demo
+  MONGODB_DB_NAME:ghademo
 jobs:
   test:
-    environment: testing
     env: MONGODB_CLUSTER_ADDRESS:cluster0.grt6yzv.mongodb.net
       MONGODB_USERNAME:salehinawroz_db_user
       MONGODB_PASSWORD:hwvmiIyS3EXBX2wY
