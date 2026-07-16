@@ -22,7 +22,7 @@ jobs:
       - name: Get Code
         uses: actions/checkout@v4
       - name: Output MongoDB DB Name
-        run: echo $MONGODB_DB_NAME
+        run: echo ${{ env.MONGODB_DB_NAME }}
 
   #     - name: Cache dependencies
   #       uses: actions/cache@v4
