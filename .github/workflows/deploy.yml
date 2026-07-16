@@ -16,7 +16,7 @@ jobs:
       MONGODB_CLUSTER_ADDRESS: cluster0.grt6yzv.mongodb.net
       MONGODB_USERNAME: salehinawroz_db_user
       MONGODB_PASSWORD: hwvmiIyS3EXBX2wY
-      PORT: 8080
+      PORT: 3000
 
     steps:
       - name: Get Code
@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Run server
-        run: npm start & npx wait-on https://127.0.0.1:8080
+        run: npm start & npx wait-on https://127.0.0.1:$ {{ env.PORT }}
 
       - name: Run tests
         run: npm test
